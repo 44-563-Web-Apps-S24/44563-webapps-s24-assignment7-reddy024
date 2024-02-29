@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .flex-container {
+      display: flex;
+      flex-direction: row;
+      background-color: aqua;
+    }
+
+    .flex-container > div {
+      background-color: #eccbcb;
+      margin: 10px;
+      padding: 20px;
+      font-size: 30px;
+    }
+
+    /* Responsive layout */
+    @media (max-width: 600px) {
+      .flex-container {
+        flex-direction: column;
+        background-color: rgb(93, 217, 234);
+      }
+    }
+  </style>
+  <title>List of Divs</title>
+</head>
+<body>
+  <h2>Rakesh Kusa builds list with divs</h2>
+  <div class="flex-container" id="target">
+    <div class="divlist">row item 1</div>
+    <div class="divlist">row item 2</div>
+    <div class="divlist">row item 3</div>
+  </div>
+
+  <p> Press the button to create a new element of type div and then add it to the container.
+  </p>
+  <input type="text" name="in" id="in">
+  <button onclick="makeNewDiv()">Add end</button>
+  <button onclick="addFront()">Add front</button>
+  <button onclick="remove()">Remove</button>
+  <button onclick="swap()">Swap</button> 
+</body>
+<script>
+  function makeNewDiv() {
+   
+    let element = document.createElement("div");
+    element.innerHTML = document.getElementById("in").value;
+    element.className = "divlist";
+    element.style.color = "orange";
+
+   
+    let container = document.getElementById('target');
+    container.appendChild(element);
+  }
+  function remove() {
+    let divListItems = document.getElementsByClassName("divlist");
+    if (divListItems.length > 0) {
+      divListItems[Math.floor(divListItems.length / 2)].remove();
+    }
+  }
+
+
+  function addFront() {
+    let element = document.createElement("div");
+    element.innerHTML = document.getElementById("in").value;
+    element.className = "divlist"; 
+    element.style.color = "orange";
+
+  
+    let container = document.getElementById('target');
+    container.insertBefore(element, container.firstChild);
+  }
+  function swap() {
+    let divlstitms = document.getElementsByClassName("divlist");
+
+    if (divlstitms.length >= 2) {
+      let idx1 = Math.floor(Math.random() * divlstitms.length);
+      let idx2 = Math.floor(Math.random() * divlstitms.length);
+
+      
+      while (idx1 === idx2) {
+        idx2 = Math.floor(Math.random() * divlstitms.length);
+      }
+
+      let temp = divlstitms[idx1].innerHTML;
+      divlstitms[idx1].innerHTML = divlstitms[idx2].innerHTML;
+      divlstitms[idx2].innerHTML = temp;
+    }
+  }
+</script>
+</html>

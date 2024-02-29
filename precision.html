@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Timing Game</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+    <h2>Rakesh Kusa Speed check</h2>
+  
+    <div id="target">
+     <h1>Your time</h1> 
+    </div>
+    <div id="counter">
+        <h2>Your time</h2> 
+    </div>
+  
+    <button type="button" class="btn btn-primary" onclick="startTime()">
+      Start Timer
+    </button>
+  
+    <button type="button" class="btn btn-primary" onclick="recordTime()">
+      Stop Timer
+    </button>
+    
+    <script> 
+      let stopTime = undefined
+      let countdownDuration = 0;
+  
+      function recordTime() {
+        stopTime = Date.now();
+        console.log(stopTime);
+      }
+  
+      function startTime() {
+        // Randomly choose a starting value for the countdown between 2 and 10
+        countdownDuration = Math.floor(Math.random() * 9) + 2;
+  
+        for (let i = countdownDuration; i >= 0; i--) {
+          setTimeout(function() {
+            document.getElementById("counter").innerHTML = i;
+          }, (1000 * (countdownDuration - i)));
+        }
+  
+        setTimeout(function() {
+          if (stopTime == undefined) {
+            document.getElementById("target").innerHTML = "Too Slow";
+          } else {
+            let endTime = Date.now();
+            let difference = endTime - stopTime;
+            document.getElementById("target").innerHTML = "Time was " + difference;
+          }
+        }, (countdownDuration * 1000));
+      }
+    </script>
+  
+  </body>
+  </html>

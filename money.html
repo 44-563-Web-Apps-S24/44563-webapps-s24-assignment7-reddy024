@@ -1,121 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Monster-Coins</title>
-    <style>
-        body {
-            background-color: #b459a8;
-            color: #4F5B67;
-            font-size: 150%;
-            font-family: cursive;
-        }
-
-        #instructions {
-            font-weight: bold;
-        }
-
-        #locations,
-        #score,
-        #help {
-            margin-top: 10px;
-        }
-
-        .row {
-            display: flex;
-            padding-left: 20%;
-            margin-bottom: 10px;
-        }
-
-        .location {
-            width: 80px;
-            height: 80px;
-            margin: 5px;
-            border: 1px solid black;
-            background-color: lightgray;
-            position: relative;
-        }
-
-        .location img {
-            display: flex;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-    </style>
+  <title>Find the Coins</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+  <style>
+    .container {
+    max-width: 800px;
+    margin: 20px auto;
+    text-align: center;
+    color:rgb(23, 74, 168);
+    background-color: #e1cfcf;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .instructions, #locations, #score, #help {
+    color: #fff;
+  }
+  
+  #locations, #score {
+    max-width: 800px;
+   
+    text-align: center;
+    color:cornflowerblue;
+    background-color: #e9c4c4;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+  }
+  
+  #help {
+    cursor: pointer;
+    color:chocolate;
+  }
+    .image {
+      display: inline-block;
+    }
+  </style>
 </head>
 <body>
-    <div class="container-fluid">
-    <h1>Find the coins by Rakesh Kusa</h1>
-    <div>
-        <p>Click on the locations to find coins, beware the monster</p>
-    </div>
-    <div id="locations">
-        <p>Number of locations checked is zero.</p>
-    </div>
-    <div id="score">
-        <p>Score is zero.</p>
-    </div>
-    <div>
-        <p>Click for help.</p>
-    </div>
-    <div id="help">
-        <p>Help report</p>
-    </div>
-    <br>
-    <div class="row" id="row1">
-        <div class="location"><img src="building1.jpg" alt="Building"></div>
-        <div class="location"><img src="building1.jpg" alt="Building"></div>
-        <div class="location"><img src="building1.jpg" alt="Building"></div>
-        <div class="location"><img src="building1.jpg" alt="Building"></div>
-        <div class="location"><img src="building1.jpg" alt="Building"></div>
-    </div>
-    <div class="row" id="row2">
-        <div class="location"><img src="building1.jpg" alt="Building"></div>
-        <div class="location"><img src="building1.jpg" alt="Building"></div>
-        <div class="location"><img src="building1.jpg" alt="Building"></div>
-        <div class="location"><img src="building1.jpg" alt="Building"></div>
-        <div class="location"><img src="building1.jpg" alt="Building"></div>
-    </div>
-    <div class="row" id="row3">
-        <div class="location"><img src="building1.jpg" alt="Building"></div>
-        <div class="location"><img src="building1.jpg" alt="Building"></div>
-        <div class="location"><img src="building1.jpg" alt="Building"></div>
-        <div class="location"><img src="building1.jpg" alt="Building"></div>
-        <div class="location"><img src="building1.jpg" alt="Building"></div>
-    </div>
-    <div class="row" id="row4">
-        <div class="location"><img src="building1.jpg" alt="Building"></div>
-        <div class="location"><img src="building1.jpg" alt="Building"></div>
-        <div class="location"><img src="building1.jpg" alt="Building"></div>
-        <div class="location"><img src="building1.jpg" alt="Building"></div>
-        <div class="location"><img src="building1.jpg" alt="Building"></div>
-    </div>
-    <div class="row" id="row5">
-        <div class="location"><img src="building1.jpg" alt="Building"></div>
-        <div class="location"><img src="building1.jpg" alt="Building"></div>
-        <div class="location"><img src="building1.jpg" alt="Building"></div>
-        <div class="location"><img src="building1.jpg" alt="Building"></div>
-        <div class="location"><img src="building1.jpg" alt="Building"></div>
-    </div>
-    <div class="row" id="row6">
-        <div class="location"><img src="building1.jpg" alt="Building"></div>
-        <div class="location"><img src="building1.jpg" alt="Building"></div>
-        <div class="location"><img src="building1.jpg" alt="Building"></div>
-        <div class="location"><img src="building1.jpg" alt="Building"></div>
-        <div class="location"><img src="building1.jpg" alt="Building"></div>
-    </div>
-    <div class="row" id="row7">
-        <div class="location"><img src="building1.jpg" alt="Building"></div>
-        <div class="location"><img src="building1.jpg" alt="Building"></div>
-        <div class="location"><img src="building1.jpg" alt="Building"></div>
-        <div class="location"><img src="building1.jpg" alt="Building"></div>
-        <div class="location"><img src="building1.jpg" alt="Building"></div>
-    </div>
+  <h2>Find the coins by Rakesh Kusa</h2>
+  <p>Click on the locations to find the coins, beware the monster</p>
+  <p id="locations">Number of locations checked is zero</p>
+  <p id="score">Score is zero</p>
+  <p onclick="help()">Click for help</p>
+  <p id="help">Help report</p>
+  <button type="button" class="btn btn-primary" onclick="newGame()">New Game</button>
 
-    </body>
 
+  <div>
+    <div class="image"><img src="building1.jpg" width="200px" height="100px" id="0" onclick="check(0)"></div>
+    <div class="image"><img src="building1.jpg" width="200px" height="100px" id="1" onclick="check(1)"></div>
+    <div class="image"><img src="building1.jpg" width="200px" height="100px" id="2" onclick="check(2)"></div>
+    <div class="image"><img src="building1.jpg" width="200px" height="100px" id="3" onclick="check(3)"></div>
+    <div class="image"><img src="building1.jpg" width="200px" height="100px" id="4" onclick="check(4)"></div>
+  </div>
+  <div>
+    <div class="image"><img src="building1.jpg" width="200px" height="100px" id="5" onclick="check(5)"></div>
+    <div class="image"><img src="building1.jpg" width="200px" height="100px" id="6" onclick="check(6)"></div>
+    <div class="image"><img src="building1.jpg" width="200px" height="100px" id="7" onclick="check(7)"></div>
+    <div class="image"><img src="building1.jpg" width="200px" height="100px" id="8" onclick="check(8)"></div>
+    <div class="image"><img src="building1.jpg" width="200px" height="100px" id="9" onclick="check(9)"></div>
+  </div>
+  <div>
+    <div class="image"><img src="building1.jpg" width="200px" height="100px" id="10" onclick="check(10)"></div>
+    <div class="image"><img src="building1.jpg" width="200px" height="100px" id="11" onclick="check(11)"></div>
+    <div class="image"><img src="building1.jpg" width="200px" height="100px" id="12" onclick="check(12)"></div>
+    <div class="image"><img src="building1.jpg" width="200px" height="100px" id="13" onclick="check(13)"></div>
+    <div class="image"><img src="building1.jpg" width="200px" height="100px" id="14" onclick="check(14)"></div>
+  </div>
+  <div>
+    <div class="image"><img src="building1.jpg" width="200px" height="100px" id="15" onclick="check(15)"></div>
+    <div class="image"><img src="building1.jpg" width="200px" height="100px" id="16" onclick="check(16)"></div>
+    <div class="image"><img src="building1.jpg" width="200px" height="100px" id="17" onclick="check(17)"></div>
+    <div class="image"><img src="building1.jpg" width="200px" height="100px" id="18" onclick="check(18)"></div>
+    <div class="image"><img src="building1.jpg" width="200px" height="100px" id="19" onclick="check(19)"></div>
+  </div>
+  <div>
+    <div class="image"><img src="building1.jpg" width="200px" height="100px" id="20" onclick="check(20)"></div>
+    <div class="image"><img src="building1.jpg" width="200px" height="100px" id="21" onclick="check(21)"></div>
+    <div class="image"><img src="building1.jpg" width="200px" height="100px" id="22" onclick="check(22)"></div>
+    <div class="image"><img src="building1.jpg" width="200px" height="100px" id="23" onclick="check(23)"></div>
+    <div class="image"><img src="building1.jpg" width="200px" height="100px" id="24" onclick="check(24)"></div>
+  </div>
+  <div>
+    <div class="image"><img src="building1.jpg" width="200px" height="100px" id="25" onclick="check(25)"></div>
+    <div class="image"><img src="building1.jpg" width="200px" height="100px" id="26" onclick="check(26)"></div>
+    <div class="image"><img src="building1.jpg" width="200px" height="100px" id="27" onclick="check(27)"></div>
+    <div class="image"><img src="building1.jpg" width="200px" height="100px" id="28" onclick="check(28)"></div>
+    <div class="image"><img src="building1.jpg" width="200px" height="100px" id="29" onclick="check(29)"></div>
+  </div>
+  <div>
+    <div class="image"><img src="building1.jpg" width="200px" height="100px" id="30" onclick="check(30)"></div>
+    <div class="image"><img src="building1.jpg" width="200px" height="100px" id="31" onclick="check(31)"></div>
+    <div class="image"><img src="building1.jpg" width="200px" height="100px" id="32" onclick="check(32)"></div>
+    <div class="image"><img src="building1.jpg" width="200px" height="100px" id="33" onclick="check(33)"></div>
+    <div class="image"><img src="building1.jpg" width="200px" height="100px" id="34" onclick="check(34)"></div>
+  </div>
+  <script>
+    let ids = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22",
+        "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34"
+    ];
+    let score = 0;
+    let locations = 0;
+    let lastLocation = 0;
+    let fancyCoinLocations = [];
+    let monsterLocation = 0;
+    let gameOver = false;
+    function initializeLocations() {
+        monsterLocation = Math.floor(Math.random() * 35); 
+        fancyCoinLocations = [];
+        while (fancyCoinLocations.length < 6) { 
+            let location = Math.floor(Math.random() * 35);
+            if (location !== monsterLocation && !fancyCoinLocations.includes(location)) {
+                fancyCoinLocations.push(location);
+            }
+        }
+    }
+    function check(position) {
+        if (!gameOver) {
+            let id = ids[position];
+            if (position == monsterLocation) {
+                document.getElementById(id).src = "monster.jpg";
+                gameOver = true;
+                score -= 5;
+            } else if (fancyCoinLocations.includes(position)) {
+                document.getElementById(id).src = "fanciecoin.jpg";
+                score += 3;
+            } else {
+                document.getElementById(id).src = "coin image.jpg";
+                score += 1;
+            }
+            locations++;
+            document.getElementById("locations").innerHTML = "Number of locations checked is " + locations;
+            document.getElementById("score").innerHTML = "Score is " + score;
+            lastLocation = position;
+        }
+    }
+
+    function help() {
+        if (fancyCoinLocations.includes(lastLocation + 1) || fancyCoinLocations.includes(lastLocation - 1) ||
+            fancyCoinLocations.includes(lastLocation + 5) || fancyCoinLocations.includes(lastLocation - 5)) {
+            document.getElementById("help").innerHTML = "So close";
+            return "So close";
+        } else if (((Math.floor(lastLocation / 5) - Math.floor(monsterLocation / 5)) >= -1 &&
+                (Math.floor(lastLocation / 5) - Math.floor(monsterLocation / 5)) <= 1) && ((lastLocation % 5) - (monsterLocation % 5)) >= -1 &&
+            ((lastLocation % 5) - (monsterLocation % 5)) <= 1) {
+            document.getElementById("help").innerHTML = "Grrr";
+            return "Grrr";
+        } else {
+            document.getElementById("help").innerHTML = "All clear";
+            return "All clear";
+        }
+    }
+    function newGame() {
+       
+       score = 0;
+       locations = 0;
+       lastLocation = 0;
+       gameOver = false;
+       initializeLocations(); 
+
+     
+       document.getElementById("locations").innerHTML = "Number of locations checked is " + locations;
+       document.getElementById("score").innerHTML = "Score is " + score;
+       document.getElementById("help").innerHTML = "Help report";
+       for (let i = 0; i < ids.length; i++) {
+           document.getElementById(ids[i]).src = "building1.jpg";
+       }
+   }
+  </script>
+</body>
 </html>
